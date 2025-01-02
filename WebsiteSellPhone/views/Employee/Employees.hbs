@@ -1,0 +1,495 @@
+{{ header }}
+
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <!-- Các thẻ meta bắt buộc -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Star Admin2</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/public/assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/public/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/public/assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/public/assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/assets/vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="/public/assets/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/public/assets/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/public/assets/css/bootstrap-datepicker.min.css">
+    <!-- endinject -->
+    <!-- Plugin css cho trang này -->
+    <link rel="stylesheet" href="/public/assets/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/public/assets/css/select.dataTables.min.css">
+    <!-- Kết thúc plugin css cho trang này -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/public/assets/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/public/assets/images/favicon.png" />
+    <style>
+        .search-btn {
+          background-color: #4CAF50; /* Màu nền */
+          color: white; /* Màu chữ */
+          border: none; /* Không có viền */
+          padding: 5px 8px; /* Khoảng cách bên trong */
+          text-align: center; /* Căn giữa chữ */
+          text-decoration: none; /* Không gạch chân */
+          display: inline-block; /* Hiển thị dạng inline-block */
+          font-size: 16px; /* Kích thước chữ */
+          margin-left: 10px; /* Khoảng cách bên trái */
+          cursor: pointer; /* Con trỏ chuột biến thành tay khi di chuột qua */
+          border-radius: 5px; /* Bo tròn góc */
+          transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển đổi */
+        }
+
+        .search-btn:hover {
+            background-color: #45a049; /* Màu nền khi hover */
+            transform: scale(1.05); /* Tăng kích thước nhẹ khi hover */
+        }
+
+        .search-btn:active {
+            transform: scale(0.95); /* Giảm kích thước nhẹ khi nhấn */
+        }
+
+        /* CSS cho button thêm sản phẩm */
+        .add-product-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .add-product-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* CSS cho bảng sản phẩm */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; /* Cố định chiều rộng của bảng */
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            position: sticky; /* Cố định vị trí */
+            top: 0; /* Cố định ở đầu bảng */
+            z-index: 10; /* Đặt z-index cao để th có thể nổi bật hơn */
+        }
+
+        /* Cố định các cột */
+        th:nth-child(1),
+        td:nth-child(1) {
+            position: sticky;
+            left: 0;
+            background-color: white;
+            z-index: 5; /* Để không bị chồng lên bởi các cột khác */
+            width: 100px; /* Chiều rộng cột mã vạch */
+            overflow: hidden; /* Ẩn nội dung khi vượt quá chiều rộng */
+            text-overflow: ellipsis; /* Hiển thị dấu '...' khi nội dung bị cắt */
+            white-space: nowrap; /* Không xuống dòng trong ô */
+        }
+
+        th:nth-child(2),
+        td:nth-child(2) {
+            position: sticky;
+            left: 100px; /* Cố định theo vị trí */
+            background-color: white;
+            z-index: 5;
+            width: 150px; /* Chiều rộng cột tên sản phẩm */
+            overflow: hidden; /* Ẩn nội dung khi vượt quá chiều rộng */
+            text-overflow: ellipsis; /* Hiển thị dấu '...' khi nội dung bị cắt */
+            white-space: nowrap; /* Không xuống dòng trong ô */
+        }
+
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 120px; /* Chiều rộng cột giá nhập */
+        }
+
+        th:nth-child(4),
+        td:nth-child(4) {
+            width: 120px; /* Chiều rộng cột giá bán lẻ */
+        }
+
+        th:nth-child(5),
+        td:nth-child(5) {
+            width: 120px; /* Chiều rộng cột danh mục */
+        }
+
+        th:nth-child(6),
+        td:nth-child(6) {
+            margin-left: 15px;
+            height: 100px;
+            width: 120px; /* Chiều rộng cột hình ảnh */
+            object-fit: cover;
+        }
+
+        th:nth-child(7),
+        td:nth-child(7) {
+            position: relative; /* Để cho cột mô tả có thể rộng hơn */
+            width: 300px; /* Chiều rộng cột mô tả */
+            height: 50px; /* Chiều cao cố định cho ô mô tả */
+            overflow: hidden; /* Ẩn nội dung khi nó vượt quá chiều cao */
+            text-overflow: ellipsis; /* Hiển thị dấu '...' khi nội dung bị cắt */
+            white-space: nowrap; /* Không xuống dòng trong ô */
+        }
+
+        th:nth-child(8),
+        td:nth-child(8) {
+            position: relative; /* Để cho cột mô tả có thể rộng hơn */
+            width: 200px; /* Chiều rộng cột mô tả */
+            height: 50px; /* Chiều cao cố định cho ô mô tả */
+            overflow: hidden; /* Ẩn nội dung khi nó vượt quá chiều cao */
+            text-overflow: ellipsis; /* Hiển thị dấu '...' khi nội dung bị cắt */
+            white-space: nowrap; /* Không xuống dòng trong ô */
+        } 
+
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        /* CSS cho nút Chỉnh sửa và Xóa */
+        .action-btn {
+            padding: 5px 10px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .edit-btn {
+            background-color: #007bff;
+        }
+
+        .edit-btn:hover {
+            color: antiquewhite;
+            background-color: #0056b3;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+  </head>
+  <body class="with-welcome-text">
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+          <div class="me-3">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
+              <span class="icon-menu"></span>
+            </button>
+          </div>
+          <div>
+            <a class="navbar-brand brand-logo" href="/">
+              <img src="/public/assets/images/logo.svg" alt="logo" />
+            </a>
+            <a class="navbar-brand brand-logo-mini" href="/">
+              <img src="/public/assets/images/logo-mini.svg" alt="logo" />
+            </a>
+          </div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-top">
+          <ul class="navbar-nav">
+            <li class="nav-item fw-semibold d-none d-lg-block ms-0">
+              <h1 class="welcome-text">
+                  <span class="text-black fw-bold">Welcome, {{admin.fullname}}!</span>
+              </h1>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+              <a class="nav-link" id="UserDropdown" href="/logout" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{!-- ảnh avt admin --}}
+                  <button class="btn-primary" style="border-radius: 8px">Đăng xuất</button>
+              </a>
+              
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item nav-category">Quản lý Shop</li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="/employees" aria-expanded="false" aria-controls="ui-basic">
+                <i class="menu-icon mdi mdi-floor-plan"></i>
+                <span class="menu-title">Quản lý tài khoản</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="/admin/customer" aria-expanded="false" aria-controls="form-elements">
+                <i class="menu-icon mdi mdi-card-text-outline"></i>
+                <span class="menu-title">Quản lý khách hàng</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="form-elements">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="/products" aria-expanded="false" aria-controls="charts">
+                <i class="menu-icon mdi mdi-chart-line"></i>
+                <span class="menu-title">Quản lý sản phẩm</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="charts">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="/admin/invoices" aria-expanded="false" aria-controls="tables">
+                <i class="menu-icon mdi mdi-table"></i>
+                <span class="menu-title">Quản lý hóa đơn</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="tables">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+                <i class="menu-icon mdi mdi-layers-outline"></i>
+                <span class="menu-title">Quản lý sản phẩm sale</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="icons">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages/icons/font-awesome.html">Font Awesome</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+    {{!-- đoạn body --}}
+        <div class="main-panel">
+  <div class="content-wrapper">
+    <div class="row">
+      <h4>Danh sách nhân viên</h4>
+      <a href="/employees/add" class="btn btn-success mb-3">Tạo tài khoản cho nhân viên mới mới</a>
+      <div class="col-md-4 ml-auto">
+        <form action="#" method="GET" class="input-group mb-3">
+          <input type="text" name="query" class="form-control" placeholder="Tìm kiếm nhân viên..." value="{{query}}" id="search-input">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-outline-primary">Tìm kiếm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    {{#if message}}
+      {{#if (eq message "Không thể khóa tài khoản admin")}}
+        <div class="alert alert-danger">{{message}}</div>
+      {{else}}
+        <div class="alert alert-success">{{flash_message}}</div>
+      {{/if}}
+    {{/if}}
+    <div class="row">
+      {{#if employees.length}}
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th>Hình ảnh</th>
+              <th>Tài khoản được cấp</th>
+              <th>Họ Tên</th>
+              <th>Quyền hạn</th>
+              <th>Trạng thái tài khoản</th>
+              <th>Trạng thái hoạt động</th>
+              <th>Ngày tạo tài khoản</th>
+              <th>Ngày kích hoạt tài khoản</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each employees}}
+            <tr>
+              <td class="text-center">
+                <img src="/img/employees_img/{{this.profile_image}}" alt="{{this.name}}" style="width: 120px; height: auto;">
+              </td>
+              <td>{{this.username}}</td>
+              <td>{{this.fullname}}</td>
+              <td>{{this.role}}</td>
+              {{#if this.status}}
+                <td> <a class="btn btn-primary btn-sm mb-1">Kích hoạt</a></td>
+              {{else}}
+                <td><a class="btn btn-danger btn-sm mb-1">Bị khóa</a></td>
+              {{/if}}
+
+              {{#if this.is_Active}}
+                <td> <a class="btn btn-success btn-sm mb-1">Online</a></td>
+              {{else}}
+                <td><a class="btn btn-dark btn-sm mb-1">Offline</a></td>
+              {{/if}}
+
+              <td>{{this.created_at}}</td>
+
+              {{#if this.updated_at}}
+                <td>{{this.updated_at}}</td>
+              {{else}}
+                <td>Chưa được kích hoạt lần đầu</td>
+              {{/if}}
+
+              <td>
+                {{#if this.updated_at}}
+                    {{#if this.status}}
+                      <a 
+                          href="/employees/changedStatus/{{this._id}}?w=lock" 
+                          class="btn btn-danger btn-sm mb-1" 
+                          onclick="return confirmLock('{{this.username}}');">
+                          Khóa tài khoản
+                      </a>
+                  {{else}}
+                      <a 
+                          href="/employees/changedStatus/{{this._id}}?w=unlock" 
+                          class="btn btn-success btn-sm mb-1" 
+                          onclick="return confirmUnlock('{{this.username}}');">
+                          Mở khóa tài khoản
+                      </a>
+                  {{/if}}
+                {{else}}
+                    <a 
+                        href="/employees/resend-login-link/{{this._id}}" 
+                        class="btn btn-danger btn-sm mb-1" 
+                        onclick="return confirmSendmail('{{this.fullname}}');">
+                        Gửi lại mail 1p
+                    </a>
+                {{/if}}
+                <a href="/employees/details/{{this._id}}" class=" btn btn-primary btn-sm mb-1">Chi tiết</a>
+              </td>
+
+
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      {{else}}
+      <p>Không có nhân viên nào được tìm thấy.</p>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+
+        
+
+
+
+
+
+
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="assets/vendors/chart.js/chart.umd.js"></script>
+    <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
+    <!-- End custom js for this page-->
+  </body>
+  <script>
+      function confirmLock(email) {
+          return confirm('Bạn có chắc muốn khóa tài khoản: ' + email + ' không?');
+      }
+
+      function confirmUnlock(email) {
+          return confirm('Bạn có chắc muốn mở khóa tài khoản: ' + email + ' không?');
+      }
+      function confirmSendmail(email){
+        return confirm('Bạn có chắc muốn gửi lại mail kích hoạt cho nhân viên: ' + email + ' không?');
+      }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('search-input'); // Lấy ô tìm kiếm
+      const tableRows = document.querySelectorAll('table tbody tr'); // Lấy tất cả các hàng trong bảng
+      const searchQuery = searchInput.value.toLowerCase(); // Đảm bảo so sánh không phân biệt chữ hoa chữ thường
+
+      // Lắng nghe sự kiện khi người dùng nhập vào ô tìm kiếm
+      searchInput.addEventListener('input', function () {
+        const query = searchInput.value.toLowerCase(); // Chuyển giá trị tìm kiếm về chữ thường
+
+        tableRows.forEach(row => {
+          const username = row.querySelector('td:nth-child(2)').textContent.toLowerCase();  // Tên tài khoản
+          const fullname = row.querySelector('td:nth-child(3)').textContent.toLowerCase();  // Họ tên
+          const role = row.querySelector('td:nth-child(4)').textContent.toLowerCase();  // Vai trò
+
+          // Kiểm tra xem có phần tử nào trong hàng khớp với từ khóa tìm kiếm
+          if (username.includes(query) || fullname.includes(query) || role.includes(query)) {
+            row.style.display = '';  // Hiển thị hàng nếu khớp
+          } else {
+            row.style.display = 'none';  // Ẩn hàng nếu không khớp
+          }
+        });
+      });
+    });
+  </script>
+
+
+</html>
+
+{{ footer }}

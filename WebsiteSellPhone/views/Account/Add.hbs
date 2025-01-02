@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thêm Tài Khoản</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      text-align: center;
+    }
+    input[type="text"], input[type="email"], input[type="password"], input[type="url"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    select, input[type="checkbox"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Thêm Tài Khoản</h2>
+    <form action="/account/add" method="POST">
+      <input type="text" name="username" placeholder="Tên người dùng" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Mật khẩu" required>
+      <input type="text" name="role" placeholder="Vai trò" required>
+      <input type="url" name="profile_image" placeholder="URL ảnh đại diện" required>
+      <input type="text" name="fullname" placeholder="Tên đầy đủ">
+      <label>
+        <input type="checkbox" name="is_locked"> Khóa tài khoản
+      </label>
+      <button type="submit">Thêm Tài Khoản</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,304 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Invoice || Truemart Responsive Html5 Ecommerce Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- Ionicons css -->
+    <link rel="stylesheet" href="/css/ionicons.min.css">
+    <!-- Linearicons css -->
+    <link rel="stylesheet" href="/css/linearicons.css">
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="/css/nice-select.css">
+    <!-- Jquery fancybox css -->
+    <link rel="stylesheet" href="/css/jquery.fancybox.css">
+    <!-- Jquery ui price slider css -->
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <!-- Meanmenu css -->
+    <link rel="stylesheet" href="/css/meanmenu.min.css">
+    <!-- Nivo slider css -->
+    <link rel="stylesheet" href="/css/nivo-slider.css">
+    <!-- Owl carousel css -->
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="/css/default.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <!-- Modernizer js -->
+    <script src="/js/vendor/modernizr-3.5.0.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Newsletter Popup End -->
+        <!-- Main Header Area Start Here -->
+        <header>
+            <!-- Header Top End Here -->
+            <!-- Header Middle Start Here -->
+            <div class="header-middle ptb-15">
+                <div class="container">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="logo mb-all-30">
+                                <a href="/"><img src="img\logo\logo.png" alt="logo-image"></a>
+                            </div>
+                        </div>
+                        <!-- Categorie Search Box Start Here -->
+                        <div class="col-lg-5 col-md-8 ml-auto mr-auto col-10">
+                            <div class="categorie-search-box">
+                                <form action="/shop">
+                                    <input type="text" name="search" placeholder="Tìm kiếm">
+                                    <button><i class="lnr lnr-magnifier"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Categorie Search Box End Here -->
+                        <!-- Cart Box Start Here -->
+                        <div class="col-lg-4 col-md-12">
+                            <div class="cart-box mt-all-30">
+                                <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
+                                    <li>
+                                        
+                                        <a href="/cart">
+                                            <i class="lnr lnr-cart"></i>
+                                            <span class="my-cart">
+                                                {{!-- <span class="total-pro">{{totalProducts}}</span> <!-- Hiển thị tổng số sản phẩm --> --}}
+                                                <span>cart</span>
+                                            </span>
+                                        </a>
+
+                                    </li>
+                                    <li>
+                                        {{#if admin}}
+                                            <a href="/admin">
+                                                <i class="lnr lnr-user"></i>
+                                                <span class="my-cart"><span> <strong>{{admin.fullname}}</strong></span></span>
+                                            </a>
+                                        {{else}}
+                                            <a href="/login">
+                                                <i class="lnr lnr-user"></i>
+                                                <span class="my-cart"><span> <strong>Sign in</strong></span></span>
+                                            </a>
+                                        {{/if}}
+                                    </li>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Header Middle End Here -->
+            <!-- Header Bottom Start Here -->
+            <div class="header-bottom  header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-4 col-md-6 vertical-menu d-none d-lg-block">
+                            <span class="categorie-title">Danh mục </span>
+                        </div>                     
+                        <div class="col-xl-9 col-lg-8 col-md-12 ">
+                            <nav class="d-none d-lg-block">
+                                <ul class="header-bottom-list d-flex">
+                                    <li class="active"><a href="/">home</a>
+                                    </li>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+        </header>
+        <!-- Main Header Area End Here -->
+        <!-- Categorie Menu & Slider Area Start Here -->
+        <div class="main-page-banner home-3">
+            <div class="container">
+                <div class="row">
+                    <!-- Vertical Menu Start Here -->
+                    <div class="col-xl-3 col-lg-4 d-none d-lg-block">
+                        <div class="vertical-menu mb-all-30">
+                            <nav>
+                                <ul class="vertical-menu-list">
+                                    <li><a href="shop?category=Laptop"><span><img src="img/vertical-menu/9.png" alt="menu-icon"></span>Máy tính</a></li>
+                                    <li><a href="shop?category=Điện thoại"><span><img src="img/vertical-menu/4.png" alt="menu-icon"></span>Điện thoại</a></li>
+                                    <li><a href="shop?category=Màn hình"><span><img src="img/vertical-menu/8.png" alt="menu-icon"></span>Màn hình</a></li>
+                                    <li><a href="shop?category=Phụ kiện"><span><img src="img/vertical-menu/7.png" alt="menu-icon"></span>Phụ kiện</a></li>
+                                    <li><a href="shop?category=Máy in"><span><img src="img/vertical-menu/5.png" alt="menu-icon"></span>Máy in</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row End -->
+            </div>     
+        </div>
+        <!-- Categorie Menu & Slider Area End Here -->
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-area mt-30">
+            <div class="container">
+                <div class="breadcrumb">
+                    <ul class="d-flex align-items-center">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Container End -->
+        </div>
+       
+        <!-- coupon-area end -->
+        <!-- checkout-area start -->
+       <div class="checkout-area pb-100 pt-15 pb-sm-60">
+            <div class="container">
+                <h3>Hóa Đơn</h3>
+                <p><strong>Mã hoá đơn:</strong>{{invoiceId}}</p>
+                <p><strong>Nhân viên bán hàng:</strong> {{salesperson}}</p>
+                <p><strong>Số điện thoại:</strong> {{phone}}</p>
+                <p><strong>Họ và tên:</strong> {{fullname}}</p>
+                <p><strong>Địa chỉ:</strong> {{address}}</p>
+                <p>
+                    <strong>Tổng tiền:</strong>
+                    <script>
+                        document.write((function(num) {
+                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                        })({{total}}));
+                    </script>
+                </p>                                                            
+                <p>
+                    <strong>Số tiền nhận:</strong>
+                    <script>
+                        document.write((function(num) {
+                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                        })({{amount_given}}));
+                    </script>
+                </p>
+                <p>
+                    <strong>Số tiền thối lại:</strong> 
+                    <script>
+                        document.write((function(num) {
+                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                        })({{change_due}}));
+                    </script>
+                </p>
+
+                <h3>Danh mục sản phẩm mua</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each productDetails}} <!-- Sử dụng products để lặp qua -->
+                        <tr>
+                            <td>{{this.name}}</td>
+                            <td>{{this.quantity}}</td>
+                            <td>
+                                <script>
+                                    document.write((function(num) {
+                                    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                    })({{this.price}}));
+                                </script>
+                            </td>
+                            <td>
+                                <script>
+                                    document.write((function(num) {
+                                    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                    })({{this.subtotal}}));
+                                </script>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+
+                <div class="text-center mt-4">
+                    <a href="/" class="btn btn-primary">Quay lại trang chủ</a>
+                    <a href="/invoices/{{invoiceId}}/pdf" class="btn btn-secondary">Tải hóa đơn PDF</a> <!-- Nút tải PDF -->
+                </div>
+
+            </div>
+        </div>
+
+
+
+  
+        <footer class="off-white-bg2 pt-95 bdr-top pt-sm-55">
+
+            <div class="footer-middle text-center">
+                <div class="container">
+                    <div class="footer-middle-content pt-20 pb-30">
+                            <ul class="social-footer">
+                                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://plus.google.com/"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><img src="img\icon\social-img1.png" alt="google play"></a></li>
+                                <li><a href="#"><img src="img\icon\social-img2.png" alt="app store"></a></li>
+                            </ul>
+                    </div>
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Footer Middle End -->
+            <!-- Footer Bottom Start -->
+            <div class="footer-bottom pb-30">
+                <div class="container">
+
+                     <div class="copyright-text text-center">                    
+                        <p>Copyright © 2018 <a target="_blank" href="#">Truemart</a> All Rights Reserved.</p>
+                     </div>
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Footer Bottom End -->
+        </footer>
+        <!-- Quick View Content End -->
+    </div>
+    <!-- Main Wrapper End Here -->
+
+    <script src="/js/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Countdown js -->
+    <script src="/js/jquery.countdown.min.js"></script>
+    <!-- Mobile menu js -->
+    <script src="/js/jquery.meanmenu.min.js"></script>
+    <!-- ScrollUp js -->
+    <script src="/js/jquery.scrollUp.js"></script>
+    <!-- Nivo slider js -->
+    <script src="/js/jquery.nivo.slider.js"></script>
+    <!-- Fancybox js -->
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <!-- Jquery nice select js -->
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <!-- Jquery ui price slider js -->
+    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Owl carousel -->
+    <script src="/js/owl.carousel.min.js"></script>
+    <!-- Bootstrap popper js -->
+    <script src="/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Plugin js -->
+    <script src="/js/plugins.js"></script>
+    <!-- Main activation js -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

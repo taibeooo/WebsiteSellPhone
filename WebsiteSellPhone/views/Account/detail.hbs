@@ -1,0 +1,96 @@
+{{ header }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Tài Khoản</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      text-align: center;
+    }
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #007bff;
+      text-decoration: none;
+    }
+    
+
+    .image-container {
+      width: 150px; /* Chiều rộng cố định */
+      height: 150px; /* Chiều cao cố định */
+      overflow: hidden; /* Ẩn phần bị tràn */
+      border-radius: 50%; /* Để hình tròn */
+      border: 2px solid #007bff; /* Đường viền */
+      display: flex; /* Sử dụng flexbox để căn giữa */
+      align-items: center; /* Căn giữa theo chiều dọc */
+      justify-content: center; /* Căn giữa theo chiều ngang */
+      background-color: #f8f9fa; /* Màu nền */
+      margin: 0 auto; /* Để căn giữa thẻ này */
+    }
+
+    .image-container img {
+      width: 100%; /* Chiều rộng hình ảnh 100% */
+      height: auto; /* Chiều cao tự động giữ tỉ lệ */
+      object-fit: cover; /* Cắt hình ảnh để giữ tỉ lệ */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Chi Tiết Tài Khoản</h2>
+    <div class="image-container">
+        <img src="/img/employees_img/{{employee.profile_image}}" alt="Employee Image">
+    </div>
+    <p><strong>Tên người dùng:</strong> {{employee.fullname}}</p>
+    <p><strong>Tên tài khoản được cấp:</strong> {{employee.username}}</p>
+    <p>
+        <strong>Trạng thái tài khoản:</strong> 
+        {{#if employee.status}}
+            <a class="btn btn-primary btn-sm mb-1">Kích hoạt</a>
+        {{else}}
+            <a class="btn btn-danger btn-sm mb-1">Bị khóa</a>
+        {{/if}}
+    </p>
+    <p>
+        <strong>Hoạt động:</strong> 
+        {{#if employee.is_Active}}
+            <a class="btn btn-success btn-sm mb-1">Online</a>
+        {{else}}
+            <a class="btn btn-dark btn-sm mb-1">Offline</a>
+        {{/if}}
+    </p>
+    <p><strong>Email:</strong> {{employee.email}}</p>
+    <p><strong>Vai trò:</strong> {{employee.role}}</p>
+    <p><strong>Ngày sinh:</strong> {{employee.birthday}}</p>
+    <p><strong>Giới tính:</strong> {{employee.gender}}</p>
+    <p><strong>Địa chỉ:</strong> {{employee.address}}</p>
+    <p><strong>Số điện thoại:</strong> {{employee.phone}}</p>
+    <a href="/employees">Quay lại danh sách tài khoản</a>
+  </div>
+</body>
+</html>
+
+{{ footer }}

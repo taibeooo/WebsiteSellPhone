@@ -1,0 +1,639 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home || Truemart Responsive Html5 Ecommerce Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- Ionicons css -->
+    <link rel="stylesheet" href="/css/ionicons.min.css">
+    <!-- Linearicons css -->
+    <link rel="stylesheet" href="/css/linearicons.css">
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="/css/nice-select.css">
+    <!-- Jquery fancybox css -->
+    <link rel="stylesheet" href="/css/jquery.fancybox.css">
+    <!-- Jquery ui price slider css -->
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <!-- Meanmenu css -->
+    <link rel="stylesheet" href="/css/meanmenu.min.css">
+    <!-- Nivo slider css -->
+    <link rel="stylesheet" href="/css/nivo-slider.css">
+    <!-- Owl carousel css -->
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="/css/default.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Modernizer js -->
+    <script src="/js/vendor/modernizr-3.5.0.min.js"></script>
+    <style>
+        .primary-img {
+    width: 200px; /* Thay đổi kích thước theo yêu cầu của bạn */
+    height: 200px; /* Thay đổi kích thước theo yêu cầu của bạn */
+    object-fit:contain;
+    border-radius: 5px; /* Bo tròn các góc nếu cần thiết */
+}
+
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
+
+    <!-- Main Wrapper Start Here -->
+    <div class="wrapper">
+       <!-- Newsletter Popup Start -->
+        
+        <!-- Newsletter Popup End -->
+        <!-- Main Header Area Start Here -->
+        <header>
+            <div class="header-middle ptb-15">
+                <div class="container">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="logo mb-all-30">
+                                <a href="/"><img src="/img/logo/logo.png" alt="logo-image"></a>
+                            </div>
+                        </div>
+                        <!-- Categorie Search Box Start Here -->
+                        <div class="col-lg-5 col-md-8 ml-auto mr-auto col-10">
+                            <div class="categorie-search-box">
+                                <form action="/shop">
+                                    <input type="text" name="search" placeholder="Tìm kiếm">
+                                    <button><i class="lnr lnr-magnifier"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Categorie Search Box End Here -->
+                        <!-- Cart Box Start Here -->
+                        <div class="col-lg-4 col-md-12">
+                            <div class="cart-box mt-all-30">
+                                <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
+                                    <li>
+                                        
+                                        <a href="/cart">
+                                            <i class="lnr lnr-cart"></i>
+                                            <span class="my-cart">
+                                                {{!-- <span class="total-pro">{{totalProducts}}</span> <!-- Hiển thị tổng số sản phẩm --> --}}
+                                                <span>cart</span>
+                                            </span>
+                                        </a>
+
+                                    </li>
+                                        
+                                    </li>
+                                
+                                    </li>
+                                        <li>
+                                            {{#if admin}}
+                                                {{#if (eq admin.role 'staff')}}
+                                                    <div class="dropdown">
+                                                    <a href="#" class="dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="lnr lnr-user"></i>
+                                                        <span class="my-cart"><span><strong>{{admin.fullname}}</strong></span></span>
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <li><a class="dropdown-item" href="/employees/workSpace">Trang quản lý</a></li>
+                                                        <li><a class="dropdown-item" href="/employees/profile/{{admin.id}}">Thông tin cá nhân</a></li>
+                                                        <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+                                                    </ul>
+                                                    </div>
+                                                {{else if (eq admin.role 'admin')}}
+                                                    <a href="/admin">
+                                                        <i class="lnr lnr-user"></i>
+                                                        <span class="my-cart"><span><strong>{{admin.fullname}}</strong></span></span>
+                                                    </a>
+                                                {{/if}}
+                                            {{else}}
+                                                <a href="/login">
+                                                <i class="lnr lnr-user"></i>
+                                                <span class="my-cart"><span><strong>Sign in</strong></span></span>
+                                                </a>
+                                            {{/if}}
+                                        </li>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Cart Box End Here -->
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Header Middle End Here -->
+            <!-- Header Bottom Start Here -->
+            <div class="header-bottom  header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                         <div class="col-xl-3 col-lg-4 col-md-6 vertical-menu d-none d-lg-block">
+                            <span class="categorie-title">Danh mục </span>
+                        </div>                       
+                        <div class="col-xl-9 col-lg-8 col-md-12 ">
+                            <nav class="d-none d-lg-block">
+                                <ul class="header-bottom-list d-flex">
+                                    <li class="active"><a href="/">home</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+        </header>
+        <!-- Main Header Area End Here -->
+        <!-- Categorie Menu & Slider Area Start Here -->
+        <div class="main-page-banner pb-50 off-white-bg">
+            <div class="container">
+                <div class="row">
+                    <!-- Vertical Menu Start Here -->
+                    <div class="col-xl-3 col-lg-4 d-none d-lg-block">
+                        <div class="vertical-menu mb-all-30">
+                            <nav>
+                                <ul class="vertical-menu-list">
+                                    <li><a href="shop?category=Laptop"><span><img src="img/vertical-menu/9.png" alt="menu-icon"></span>Máy tính</a></li>
+                                    <li><a href="shop?category=Điện thoại"><span><img src="img/vertical-menu/4.png" alt="menu-icon"></span>Điện thoại</a></li>
+                                    <li><a href="shop?category=Màn hình"><span><img src="img/vertical-menu/8.png" alt="menu-icon"></span>Màn hình</a></li>
+                                    <li><a href="shop?category=Phụ kiện"><span><img src="img/vertical-menu/7.png" alt="menu-icon"></span>Phụ kiện</a></li>
+                                    <li><a href="shop?category=Máy in"><span><img src="img/vertical-menu/5.png" alt="menu-icon"></span>Máy in</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Vertical Menu End Here -->
+                    <!-- Slider Area Start Here -->
+                    <div class="col-xl-9 col-lg-8 slider_box">
+                        <div class="slider-wrapper theme-default">
+                            <!-- Slider Background  Image Start-->
+                            <div id="slider" class="nivoSlider">
+                                <a href="/shop"><img src="img\slider\1.jpg" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
+                                <a href="/shop"><img src="img\slider\2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
+                            </div>
+                            <!-- Slider Background  Image Start-->
+                        </div>
+                    </div>
+                    <!-- Slider Area End Here -->
+                </div>
+                <!-- Row End -->
+            </div>
+            <!-- Container End -->
+        </div>
+
+        <div class="arrivals-product pb-85 pb-sm-45">
+            <div class="container">
+                <div class="main-product-tab-area">
+                    <div class="tab-menu mb-25">
+                        <div class="section-ttitle">
+                            <h2 style="font-family: 'Roboto', sans-serif;">Các sản phẩm mới</h2>
+                       </div>
+                    </div> 
+
+                    <!-- Tab Contetn Start -->
+                    <div class="tab-content">
+                        
+                       {{!-- dataa --}}
+                        <div id="kids" class="tab-pane fade show active">
+                            <!-- Arrivals Product Activation Start Here -->
+                            <div class="electronics-pro-active owl-carousel">
+                                {{!-- role data new --}}
+                                {{#each pairedProducts}}
+                                    <div class="double-product">
+                                        {{#each this}}
+                                            <div class="single-product">
+                                                <!-- Product Image Start -->
+                                                <div class="pro-img">
+                                                    <a href="/product/{{this._id}}">
+                                                    <img class="primary-img" src="/img/imgproduct/{{this.image_url}}" alt="{{this.image_url}}">
+                                                    </a>
+
+                                                    <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                                </div>
+                                                <!-- Product Image End -->
+                                                <!-- Product Content Start -->
+                                                <div class="pro-content">
+                                                    <div class="pro-info">
+                                                        <h4><a href="product.html">{{this.name}}</a></h4>
+                                                        <p><span class="price"><p>
+                                                            <span class="price">
+                                                                <script>
+                                                                    document.write((function(num) {
+                                                                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                                                    })({{this.retail_price}}));
+                                                                </script>
+                                                            </span>
+                                                        </p></span><del class="prev-price"></del></p>
+                                                        {{!-- <div class="label-product l_sale">{{this.discount}}<span class="symbol-percent">%</span></div> --}}
+                                                    </div>
+                                                    
+                                                    <form id="addToCartForm" action="/cart/add" method="POST">
+                                                        <input type="hidden" name="quantity" value="1"> <!-- mặc định 1 -->
+                                                        <input type="hidden" name="productId" value="{{this._id}}"> <!-- ID sản phẩm -->
+                                                        <div class="pro-actions text-center">
+                                                            <div class="actions-primary">
+                                                                <button type="submit" class="btn btn-primary" title="Add to Cart" data-original-title="Add to Cart">
+                                                                    + Add To Cart
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+
+
+                                                </div>
+                                                <span class="sticker-new">new</span>
+                                            </div>
+                                        {{/each}}
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <!-- Tab Content End -->
+                </div>
+                <!-- main-product-tab-area-->
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Arrivals Products Area End Here -->
+        <!-- Arrivals Products Area Start Here -->
+        <div class="second-arrivals-product pb-45 pb-sm-5">
+            <div class="container">
+                <div class="main-product-tab-area">
+                    <div class="tab-menu mb-25">
+                        <div class="section-ttitle">
+                            <h2 style="font-family: 'Roboto', sans-serif;">Máy tính văn phòng</h2>
+                       </div>
+                        <!-- Nav tabs -->
+                        <ul class="nav tabs-area" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#laptop2">Máy Tính </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#view2">Màn Hình</a>
+                            </li>
+                            
+                        </ul>                       
+
+                    </div> 
+
+                    <!-- Tab Contetn Start -->
+                    <div class="tab-content">
+                        
+                        <div id="view2" class="tab-pane fade">
+
+                <div class="best-seller-pro-active owl-carousel">
+                    {{#each pairedScreenProducts}}
+                        <!-- Single Product Start -->
+                        <div class="single-product">
+                            <!-- Product Image Start -->
+                            <div class="pro-img">
+                                <a href="/product/{{this._id}}">
+                                    <img class="primary-img" src="/img/imgproduct/{{this.image_url}}" alt="{{this.image_url}}">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View">
+                                    <i class="lnr lnr-magnifier"></i>
+                                </a>
+                            </div>
+                            <!-- Product Image End -->
+
+                            <!-- Product Content Start -->
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="/product/{{this._id}}">{{this.name}}</a></h4>
+                                    <p>
+                                        <span class="price">
+                                                        <script>
+                                                            document.write((function(num) {
+                                                                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                                            })({{this.retail_price}}));
+                                                        </script>
+                                                    </span>
+                                    </p>
+                                </div>
+                                <form id="addToCartForm" action="/cart/add" method="POST">
+                                    <input type="hidden" name="quantity" value="1"> <!-- mặc định 1 -->
+                                    <input type="hidden" name="productId" value="{{this._id}}"> <!-- ID sản phẩm -->
+                                    <div class="pro-actions text-center">
+                                        <div class="actions-primary">
+                                            <button type="submit" class="btn btn-primary" title="Add to Cart" data-original-title="Add to Cart">
+                                            + Add To Cart
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- Product Content End -->
+                        </div>
+                        <!-- Single Product End -->
+                    {{/each}}
+                </div>
+            </div>
+                   
+                        {{!-- data laptop ở đây --}}
+                        <div id="laptop2" class="tab-pane fade show active">
+
+                            <div class="best-seller-pro-active owl-carousel">
+                                {{#each pairedLaptopProducts}}
+                                    <div class="single-product">
+                                        <!-- Product Image Start -->
+                                        <div class="pro-img">
+                                            <a href="/product/{{this._id}}">
+                                                <img class="primary-img" src="/img/imgproduct/{{this.image_url}}" alt="{{this.image_url}}">
+                                            </a>
+                                            <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View">
+                                                <i class="lnr lnr-magnifier"></i>
+                                            </a>
+                                        </div>
+                                        <!-- Product Image End -->
+
+                                        <!-- Product Content Start -->
+                                        <div class="pro-content">
+                                            <div class="pro-info">
+                                                <h4><a href="/product/{{this._id}}">{{this.name}}</a></h4>
+                                                <p>
+                                                    <span class="price">
+                                                        <script>
+                                                            document.write((function(num) {
+                                                                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                                            })({{this.retail_price}}));
+                                                        </script>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <form id="addToCartForm" action="/cart/add" method="POST">
+                                                <input type="hidden" name="quantity" value="1"> <!-- mặc định 1 -->
+                                                <input type="hidden" name="productId" value="{{this._id}}"> <!-- ID sản phẩm -->
+                                                <div class="pro-actions text-center">
+                                                    <div class="actions-primary">
+                                                        <button type="submit" class="btn btn-primary" title="Add to Cart" data-original-title="Add to Cart">
+                                                        + Add To Cart
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Product Content End -->
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tab Content End -->
+                </div>
+                <!-- main-product-tab-area-->
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Arrivals Products Area End Here -->
+        <!-- Like Products Area Start Here -->
+        <div class="like-product ptb-95 off-white-bg pt-sm-50 pb-sm-55 ">
+            <div class="container">
+                <div class="like-product-area"> 
+                    <h2 style="font-family: 'Roboto', sans-serif;">Phụ kiện</h2>
+                    <!-- Arrivals Product Activation Start Here -->
+                    <div class="like-pro-active owl-carousel">
+                        {{#each pairedAccessoryProducts}}
+                            <!-- Double Product Start -->
+                            <div class="double-product">
+                                {{#each this}}
+                                    <!-- Single Product Start -->
+                                    <div class="single-product">
+                                        <!-- Product Image Start -->
+                                        <div class="pro-img">
+                                            <a href="/product/{{this._id}}">
+                                                <img class="primary-img" src="/img/imgproduct/{{this.image_url}}" alt="{{this.name}}">
+                                            </a>
+                                            <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View">
+                                                <i class="lnr lnr-magnifier"></i>
+                                            </a>
+                                        </div>
+                                        <!-- Product Image End -->
+                                        
+                                        <!-- Product Content Start -->
+                                        <div class="pro-content">
+                                            <div class="pro-info">
+                                                <h4><a href="/product/{{this._id}}">{{this.name}}</a></h4>
+                                                <p>
+                                                    <span class="price">
+                                                        <script>
+                                                            document.write((function(num) {
+                                                                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                                            })({{this.retail_price}}));
+                                                        </script>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <form id="addToCartForm" action="/cart/add" method="POST">
+                                                <input type="hidden" name="quantity" value="1"> <!-- mặc định 1 -->
+                                                <input type="hidden" name="productId" value="{{this._id}}"> <!-- ID sản phẩm -->
+                                                <div class="pro-actions text-center">
+                                                    <div class="actions-primary">
+                                                        <button type="submit" class="btn btn-primary" title="Add to Cart" data-original-title="Add to Cart">
+                                                        + Add To Cart
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Product Content End -->
+                                    </div>
+                                    <!-- Single Product End -->
+                                {{/each}}
+                            </div>
+                            <!-- Double Product End -->
+                        {{/each}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="off-white-bg2 pt-95 bdr-top pt-sm-55">
+            <!-- Footer Top Start -->
+            
+            <div class="footer-middle text-center">
+                <div class="container">
+                    <div class="footer-middle-content pt-20 pb-30">
+                            <ul class="social-footer">
+                                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://plus.google.com/"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><img src="img\icon\social-img1.png" alt="google play"></a></li>
+                                <li><a href="#"><img src="img\icon\social-img2.png" alt="app store"></a></li>
+                            </ul>
+                    </div>
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Footer Middle End -->
+            <!-- Footer Bottom Start -->
+            <div class="footer-bottom pb-30">
+                <div class="container">
+
+                     <div class="copyright-text text-center">                    
+                        <p>Copyright © 2018 <a target="_blank" href="#">Truemart</a> All Rights Reserved.</p>
+                     </div>
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Footer Bottom End -->
+        </footer>
+        <!-- Footer Area End Here -->
+        <!-- Quick View Content Start -->
+        <div class="main-product-thumbnail quick-thumb-content">
+            <div class="container">
+                <!-- The Modal -->
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Main Thumbnail Image Start -->
+                                    <div class="col-lg-5 col-md-6 col-sm-5">
+                                        <!-- Thumbnail Large Image start -->
+                                        <div class="tab-content">
+                                            <div id="thumb1" class="tab-pane fade show active">
+                                                <a data-fancybox="images" href="img\products\35.jpg"><img src="img\products\35.jpg" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb2" class="tab-pane fade">
+                                                <a data-fancybox="images" href="img\products\13.jpg"><img src="img\products\13.jpg" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb3" class="tab-pane fade">
+                                                <a data-fancybox="images" href="img\products\15.jpg"><img src="img\products\15.jpg" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb4" class="tab-pane fade">
+                                                <a data-fancybox="images" href="img\products\4.jpg"><img src="img\products\4.jpg" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb5" class="tab-pane fade">
+                                                <a data-fancybox="images" href="img\products\5.jpg"><img src="img\products\5.jpg" alt="product-view"></a>
+                                            </div>
+                                        </div>
+                                        <!-- Thumbnail Large Image End -->
+                                        <!-- Thumbnail Image End -->
+                                        <div class="product-thumbnail mt-20">
+                                            <div class="thumb-menu owl-carousel nav tabs-area" role="tablist">
+                                                <a class="active" data-toggle="tab" href="#thumb1"><img src="img\products\35.jpg" alt="product-thumbnail"></a>
+                                                <a data-toggle="tab" href="#thumb2"><img src="img\products\13.jpg" alt="product-thumbnail"></a>
+                                                <a data-toggle="tab" href="#thumb3"><img src="img\products\15.jpg" alt="product-thumbnail"></a>
+                                                <a data-toggle="tab" href="#thumb4"><img src="img\products\4.jpg" alt="product-thumbnail"></a>
+                                                <a data-toggle="tab" href="#thumb5"><img src="img\products\5.jpg" alt="product-thumbnail"></a>
+                                            </div>
+                                        </div>
+                                        <!-- Thumbnail image end -->
+                                    </div>
+                                    <!-- Main Thumbnail Image End -->
+                                    <!-- Thumbnail Description Start -->
+                                    <div class="col-lg-7 col-md-6 col-sm-7">
+                                        <div class="thubnail-desc fix mt-sm-40">
+                                            <h3 class="product-header">Printed Summer Dress</h3>
+                                            <div class="pro-price mtb-30">
+                                                <p class="d-flex align-items-center"><span class="prev-price">16.51</span><span class="price">$15.19</span><span class="saving-price">save 8%</span></p>
+                                            </div>
+                                            <p class="mb-20 pro-desc-details">Long printed dress with thin adjustable straps. V-neckline and wiring under the bust with ruffles at the bottom of the dress.</p>
+                                            <div class="product-size mb-20 clearfix">
+                                                <label>Size</label>
+                                                <select class="">
+                                                    <option>S</option>
+                                                    <option>M</option>
+                                                    <option>L</option>
+                                                </select>
+                                            </div>
+                                            <div class="color mb-20">
+                                                <label>color</label>
+                                                <ul class="color-list">
+                                                    <li>
+                                                        <a class="orange active" href="#"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="paste" href="#"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="box-quantity d-flex">
+                                                <form action="#">
+                                                    <input class="quantity mr-40" type="number" min="1" value="1">
+                                                </form>
+                                                <a class="add-cart" href="cart.html">add to cart</a>
+                                            </div>
+                                            <div class="pro-ref mt-15">
+                                                <p><span class="in-stock"><i class="ion-checkmark-round"></i> IN STOCK</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Thumbnail Description End -->
+                                </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="custom-footer">
+                                <div class="socila-sharing">
+                                    <ul class="d-flex">
+                                        <li>share</li>
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quick View Content End -->
+    </div>
+    <!-- Main Wrapper End Here -->
+
+     <script src="/js/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Countdown js -->
+    <script src="/js/jquery.countdown.min.js"></script>
+    <!-- Mobile menu js -->
+    <script src="/js/jquery.meanmenu.min.js"></script>
+    <!-- ScrollUp js -->
+    <script src="/js/jquery.scrollUp.js"></script>
+    <!-- Nivo slider js -->
+    <script src="/js/jquery.nivo.slider.js"></script>
+    <!-- Fancybox js -->
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <!-- Jquery nice select js -->
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <!-- Jquery ui price slider js -->
+    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Owl carousel -->
+    <script src="/js/owl.carousel.min.js"></script>
+    <!-- Bootstrap popper js -->
+    <script src="/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Plugin js -->
+    <script src="/js/plugins.js"></script>
+    <!-- Main activation js -->
+    <script src="/js/main.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

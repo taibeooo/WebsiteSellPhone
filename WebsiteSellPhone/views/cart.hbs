@@ -1,0 +1,450 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cart || Truemart Responsive Html5 Ecommerce Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- Ionicons css -->
+    <link rel="stylesheet" href="/css/ionicons.min.css">
+    <!-- Linearicons css -->
+    <link rel="stylesheet" href="/css/linearicons.css">
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="/css/nice-select.css">
+    <!-- Jquery fancybox css -->
+    <link rel="stylesheet" href="/css/jquery.fancybox.css">
+    <!-- Jquery ui price slider css -->
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <!-- Meanmenu css -->
+    <link rel="stylesheet" href="/css/meanmenu.min.css">
+    <!-- Nivo slider css -->
+    <link rel="stylesheet" href="/css/nivo-slider.css">
+    <!-- Owl carousel css -->
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="/css/default.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <!-- Modernizer js -->
+    <script src="/js/vendor/modernizr-3.5.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div class="header-middle ptb-15">
+                <div class="container">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="logo mb-all-30">
+                                <a href="/"><img src="/img/logo/logo.png" alt="logo-image"></a>
+                            </div>
+                        </div>
+                        <!-- Categorie Search Box Start Here -->
+                        <div class="col-lg-5 col-md-8 ml-auto mr-auto col-10">
+                            <div class="categorie-search-box">
+                                <form action="/shop">
+                                    <input type="text" name="search" placeholder="Tìm kiếm">
+                                    <button><i class="lnr lnr-magnifier"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Categorie Search Box End Here -->
+                        <!-- Cart Box Start Here -->
+                        <div class="col-lg-4 col-md-12">
+                            <div class="cart-box mt-all-30">
+                                <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
+                                    <li>
+                                        <a href="/cart">
+                                            <i class="lnr lnr-cart"></i>
+                                            <span class="my-cart">
+                                                <span>cart</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                        
+                                    </li>
+                                    
+                                    </li>
+                                    {{!-- <li><a href="/login"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Sign in</strong></span></span></a> --}}
+                                    {{!-- <li>
+                                            <a href="/login"><i class="lnr lnr-user"></i>
+                                                <span class="my-cart">
+                                                    <span>
+                                                        <strong>Sign in</strong>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        {{#if admin}}
+                                        <li>
+                                            <a href="/admin"><i class="lnr lnr-user"></i>
+                                                <span class="my-cart">
+                                                    <span>
+                                                        <strong>Welcome, {{admin.fullname}}</strong>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    {{/if}} --}}
+                                    <li>
+                                        {{#if admin}}
+                                            <a href="/admin">
+                                                <i class="lnr lnr-user"></i>
+                                                <span class="my-cart"><span> <strong>{{admin.fullname}}</strong></span></span>
+                                            </a>
+                                        {{else}}
+                                            <a href="/login">
+                                                <i class="lnr lnr-user"></i>
+                                                <span class="my-cart"><span> <strong>Sign in</strong></span></span>
+                                            </a>
+                                        {{/if}}
+                                    </li>
+
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Cart Box End Here -->
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Header Middle End Here -->
+            <!-- Header Bottom Start Here -->
+           <div class="header-bottom  header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                         <div class="col-xl-3 col-lg-4 col-md-6 vertical-menu d-none d-lg-block">
+                            <span class="categorie-title">Danh mục </span>
+                        </div>                       
+                        <div class="col-xl-9 col-lg-8 col-md-12 ">
+                            <nav class="d-none d-lg-block">
+                                <ul class="header-bottom-list d-flex">
+                                    <li class="active"><a href="/">home</a>
+                                    </li>
+                                    <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
+                                        <!-- Home Version Dropdown Start -->
+                                        <ul class="ht-dropdown dropdown-style-two">
+                                            <li><a href="/register">register</a></li>
+                                            <li><a href="/login">sign in</a></li>
+                                            <li><a href="/forgot-password">forgot password</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+        </header>
+        <div class="main-page-banner pb-50 off-white-bg">
+            <div class="container">
+                <div class="row">
+                    <!-- Vertical Menu Start Here -->
+                    <div class="col-xl-3 col-lg-4 d-none d-lg-block">
+                        <div class="vertical-menu mb-all-30">
+                            <nav>
+                                <ul class="vertical-menu-list">
+                                    <li><a href="shop?category=Laptop"><span><img src="img/vertical-menu/9.png" alt="menu-icon"></span>Máy tính</a></li>
+                                    <li><a href="shop?category=Điện thoại"><span><img src="img/vertical-menu/4.png" alt="menu-icon"></span>Điện thoại</a></li>
+                                    <li><a href="shop?category=Màn hình"><span><img src="img/vertical-menu/8.png" alt="menu-icon"></span>Màn hình</a></li>
+                                    <li><a href="shop?category=Phụ kiện"><span><img src="img/vertical-menu/7.png" alt="menu-icon"></span>Phụ kiện</a></li>
+                                    <li><a href="shop?category=Máy in"><span><img src="img/vertical-menu/5.png" alt="menu-icon"></span>Máy in</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Vertical Menu End Here -->
+                    <!-- Slider Area Start Here -->
+                    
+                    <!-- Slider Area End Here -->
+                </div>
+                <!-- Row End -->
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Breadcrumb End -->
+        <!-- Cart Main Area Start -->
+        <div class="cart-main-area ptb-100 ptb-sm-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                         {{#if error}}
+                            <div class="alert alert-danger">
+                                <strong>Lỗi!</strong> {{error}}
+                            </div>
+                        {{/if}}
+
+                        <!-- Form Start -->
+                        <form action="#">
+                            <!-- Table Content Start -->
+                            <div class="table-content table-responsive mb-45">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="product-thumbnail">Image</th>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-price">Price</th>
+                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-subtotal">Total</th>
+                                            <th class="product-remove">Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#if cart.length}}
+                                            {{#each cart}}
+                                                <tr>
+                                                    <td class="product-thumbnail">
+                                                        <a href="/product/{{this.productId}}"><img src="/img/imgproduct/{{this.img}}" alt="cart-image"></a>
+                                                    </td>
+                                                    <td class="product-name"><a href="/product/{{this.productId}}">{{this.name}}</a></td> <!-- Hiển thị tên sản phẩm -->
+                                                    <td class="product-price">
+                                                        <p class="d-flex align-items-center">
+                                                            <span class="price">
+                                                                <script>
+                                                                    document.write((function(num) {
+                                                                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                                                    })({{this.price}})); // Thay this.price bằng giá trị thực tế
+                                                                </script>
+                                                            </span> <!-- Hiển thị giá sản phẩm -->
+                                                        </p>
+                                                    </td>
+                                                    <td class="product-quantity">
+                                                        <input type="number" value="{{this.quantity}}" min="1" onchange="updateQuantity('{{this.productId}}', this.value)">
+                                                    </td>
+
+                                                        <script>
+                                                        function updateQuantity(productId, quantity) {
+                                                            fetch('/cart/update', {
+                                                                method: 'POST',
+                                                                headers: {
+                                                                    'Content-Type': 'application/json',
+                                                                },
+                                                                body: JSON.stringify({ productId, quantity }),
+                                                            })
+                                                            .then(response => response.json())
+                                                            .then(data => {
+                                                                // Cập nhật giỏ hàng nếu cần
+                                                                if (data.success) {
+                                                                    // Có thể làm gì đó như làm mới trang hoặc cập nhật lại thông tin giỏ hàng
+                                                                    location.reload(); // Tải lại trang để cập nhật giỏ hàng
+                                                                } else {
+                                                                    alert('Cập nhật không thành công');
+                                                                }
+                                                            })
+                                                            .catch((error) => {
+                                                                console.error('Lỗi:', error);
+                                                            });
+                                                        }
+                                                        </script>
+
+                                                    {{!-- <td class="product-subtotal">{{this.subtotal}}</td> --}}
+                                                    <td class="product-subtotal">
+                                                        <p class="d-flex align-items-center">
+                                                            <span class="price">
+                                                                <script>
+                                                                    document.write((function(num) {
+                                                                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                                                    })({{this.subtotal}}));
+                                                                </script>
+                                                            </span> <!-- Hiển thị giá sản phẩm -->
+                                                        </p>
+                                                    </td>
+                                                    {{!-- xoá sản phẩm trong cart --}}
+                                                    <td class="product-remove">
+                                                        <a href="#" onclick="removeFromCart('{{this.productId}}'); return false;" title="Remove this item">
+                                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                                        </a>
+                                                    </td>
+
+                                                    <script>
+                                                    function removeFromCart(productId) {
+                                                        fetch('/cart/remove', {
+                                                            method: 'POST',
+                                                            headers: {
+                                                                'Content-Type': 'application/json',
+                                                            },
+                                                            body: JSON.stringify({ productId }),
+                                                        })
+                                                        .then(response => response.json())
+                                                        .then(data => {
+                                                            // Cập nhật giỏ hàng nếu cần
+                                                            if (data.success) {
+                                                                // Tải lại trang để cập nhật giỏ hàng
+                                                                location.reload(); // Hoặc có thể cập nhật phần tử DOM để không tải lại trang
+                                                            } else {
+                                                                alert('Xóa sản phẩm không thành công');
+                                                            }
+                                                        })
+                                                        .catch((error) => {
+                                                            console.error('Lỗi:', error);
+                                                        });
+                                                    }
+                                                    </script>
+
+                                                </tr>
+                                            {{/each}}
+                                        {{else}}
+                                            <tr>
+                                                <td colspan="6">Giỏ hàng của bạn hiện đang trống.</td>
+                                            </tr>
+                                        {{/if}}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Table Content Start -->
+                            <div class="row">
+                               <!-- Cart Button Start -->
+                                <div class="col-md-8 col-sm-12">
+                                    <div class="buttons-cart">
+                                        <a href="/">Continue Shopping</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="cart_totals float-md-right text-md-right">
+                                        <h2>Cart Totals</h2>
+                                        <br>
+                                        <table class="float-md-right">
+                                            <tbody>
+                                                <tr class="order-total">
+                                                    <th>Total</th>
+                                                    <td>
+                                                        <strong>
+                                                            <span class="amount">
+                                                                <script>
+                                                                    document.write((function(num) {
+                                                                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                                                    })({{total}}));
+                                                                </script>
+                                                            </span>
+                                                        </strong>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="wc-proceed-to-checkout">
+                                            <a href="/checkout">Proceed to Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Cart Totals End -->
+                            </div>
+                            <!-- Row End -->
+                        </form>
+                        <!-- Form End -->
+                    </div>
+                </div>
+                 <!-- Row End -->
+            </div>
+        </div>
+
+        <footer class="off-white-bg2 pt-95 bdr-top pt-sm-55">
+
+            <div class="footer-middle text-center">
+                <div class="container">
+                    <div class="footer-middle-content pt-20 pb-30">
+                            <ul class="social-footer">
+                                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://plus.google.com/"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><img src="img\icon\social-img1.png" alt="google play"></a></li>
+                                <li><a href="#"><img src="img\icon\social-img2.png" alt="app store"></a></li>
+                            </ul>
+                    </div>
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Footer Middle End -->
+            <!-- Footer Bottom Start -->
+            <div class="footer-bottom pb-30">
+                <div class="container">
+
+                     <div class="copyright-text text-center">                    
+                        <p>Copyright © 2018 <a target="_blank" href="#">Truemart</a> All Rights Reserved.</p>
+                     </div>
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Footer Bottom End -->
+        </footer>
+        <!-- Footer Area End Here -->
+        <!-- Quick View Content Start -->
+        <div class="main-product-thumbnail quick-thumb-content">
+            <div class="container">
+                <!-- The Modal -->
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="custom-footer">
+                                <div class="socila-sharing">
+                                    <ul class="d-flex">
+                                        <li>share</li>
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quick View Content End -->
+    </div>
+    <!-- Main Wrapper End Here -->
+
+    <!-- jquery 3.2.1 -->
+     <script src="/js/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Countdown js -->
+    <script src="/js/jquery.countdown.min.js"></script>
+    <!-- Mobile menu js -->
+    <script src="/js/jquery.meanmenu.min.js"></script>
+    <!-- ScrollUp js -->
+    <script src="/js/jquery.scrollUp.js"></script>
+    <!-- Nivo slider js -->
+    <script src="/js/jquery.nivo.slider.js"></script>
+    <!-- Fancybox js -->
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <!-- Jquery nice select js -->
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <!-- Jquery ui price slider js -->
+    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Owl carousel -->
+    <script src="/js/owl.carousel.min.js"></script>
+    <!-- Bootstrap popper js -->
+    <script src="/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Plugin js -->
+    <script src="/js/plugins.js"></script>
+    <!-- Main activation js -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

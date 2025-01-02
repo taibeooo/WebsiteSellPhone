@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Tài Khoản</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    td a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Danh Sách Tài Khoản</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Tên người dùng</th>
+        <th>Email</th>
+        <th>Vai trò</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each accounts}}
+      <tr>
+        <td>{{this.username}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.role}}</td>
+        <td>
+          <a href="/account/detail/{{this.id}}">Xem</a>
+          <a href="/account/update/{{this.id}}">Sửa</a>
+          <a href="/account/delete/{{this.id}}">Xóa</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+</html>

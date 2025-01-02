@@ -1,0 +1,674 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Checkout || Truemart Responsive Html5 Ecommerce Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- Ionicons css -->
+    <link rel="stylesheet" href="/css/ionicons.min.css">
+    <!-- Linearicons css -->
+    <link rel="stylesheet" href="/css/linearicons.css">
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="/css/nice-select.css">
+    <!-- Jquery fancybox css -->
+    <link rel="stylesheet" href="/css/jquery.fancybox.css">
+    <!-- Jquery ui price slider css -->
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <!-- Meanmenu css -->
+    <link rel="stylesheet" href="/css/meanmenu.min.css">
+    <!-- Nivo slider css -->
+    <link rel="stylesheet" href="/css/nivo-slider.css">
+    <!-- Owl carousel css -->
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="/css/default.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <!-- Modernizer js -->
+    <script src="/js/vendor/modernizr-3.5.0.min.js"></script>
+    <style>
+        /* Đảm bảo Modal nằm ngoài các trường thông tin Billing Details */
+.checkbox-form.mb-sm-40 {
+    position: relative; /* Đảm bảo các phần tử con không bị tràn ra ngoài */
+}
+
+/* Định dạng tổng thể cho form trong modal */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px; /* Bo góc form */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    width: 90%;
+    max-width: 400px; /* Giới hạn chiều rộng tối đa */
+    font-family: Arial, sans-serif; /* Font đơn giản, dễ đọc */
+}
+
+/* Tiêu đề form */
+.modal-content h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Các label */
+.modal-content label {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Các ô input */
+.modal-content input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box; /* Đảm bảo không bị tràn */
+}
+
+/* Nút Thêm khách hàng */
+.modal-content button {
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút */
+.modal-content button:hover {
+    background-color: #218838; /* Màu xanh lá đậm hơn khi hover */
+}
+
+/* Hiệu ứng khi nhấn */
+.modal-content button:active {
+    background-color: #1e7e34; /* Màu đậm hơn nữa khi nhấn */
+}
+
+/* Nút đóng modal */
+.close {
+    color: #999;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Newsletter Popup End -->
+        <!-- Main Header Area Start Here -->
+        <header>
+            <!-- Header Top End Here -->
+            <!-- Header Middle Start Here -->
+            <div class="header-middle ptb-15">
+                <div class="container">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="logo mb-all-30">
+                                <a href="/"><img src="img\logo\logo.png" alt="logo-image"></a>
+                            </div>
+                        </div>
+                        <!-- Categorie Search Box Start Here -->
+                        <div class="col-lg-5 col-md-8 ml-auto mr-auto col-10">
+                            <div class="categorie-search-box">
+                                <form action="#">
+                                    <input type="text" name="search" placeholder="I’m shopping for...">
+                                    <button><i class="lnr lnr-magnifier"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Categorie Search Box End Here -->
+                        <!-- Cart Box Start Here -->
+                        <div class="col-lg-4 col-md-12">
+                            <div class="cart-box mt-all-30">
+                                <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
+                                    <li>
+                                        
+                                        <a href="/cart">
+                                            <i class="lnr lnr-cart"></i>
+                                            <span class="my-cart">
+                                                {{!-- <span class="total-pro">{{totalProducts}}</span> <!-- Hiển thị tổng số sản phẩm --> --}}
+                                                <span>cart</span>
+                                            </span>
+                                        </a>
+
+                                    </li>
+                                    <li>
+                                        {{#if admin}}
+                                            <a href="/admin">
+                                                <i class="lnr lnr-user"></i>
+                                                <span class="my-cart"><span> <strong>{{admin.fullname}}</strong></span></span>
+                                            </a>
+                                        {{else}}
+                                            <a href="/login">
+                                                <i class="lnr lnr-user"></i>
+                                                <span class="my-cart"><span> <strong>Sign in</strong></span></span>
+                                            </a>
+                                        {{/if}}
+                                    </li>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Header Middle End Here -->
+            <!-- Header Bottom Start Here -->
+            <div class="header-bottom  header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-4 col-md-6 vertical-menu d-none d-lg-block">
+                            <span class="categorie-title">Danh mục </span>
+                        </div>                     
+                        <div class="col-xl-9 col-lg-8 col-md-12 ">
+                            <nav class="d-none d-lg-block">
+                                <ul class="header-bottom-list d-flex">
+                                    <li class="active"><a href="/">home</a>
+                                    </li>
+                                    <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
+                                        <!-- Home Version Dropdown Start -->
+                                        <ul class="ht-dropdown dropdown-style-two">
+                                            <li><a href="/register">register</a></li>
+                                            <li><a href="/login">sign in</a></li>
+                                            <li><a href="/forgot-password">forgot password</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+        </header>
+        <!-- Main Header Area End Here -->
+        <!-- Categorie Menu & Slider Area Start Here -->
+        <div class="main-page-banner home-3">
+            <div class="container">
+                <div class="row">
+                    <!-- Vertical Menu Start Here -->
+                    <div class="col-xl-3 col-lg-4 d-none d-lg-block">
+                        <div class="vertical-menu mb-all-30">
+                            <nav>
+                                <ul class="vertical-menu-list">
+                                    <li><a href="shop?category=Laptop"><span><img src="img/vertical-menu/9.png" alt="menu-icon"></span>Máy tính</a></li>
+                                    <li><a href="shop?category=Điện thoại"><span><img src="img/vertical-menu/4.png" alt="menu-icon"></span>Điện thoại</a></li>
+                                    <li><a href="shop?category=Màn hình"><span><img src="img/vertical-menu/8.png" alt="menu-icon"></span>Màn hình</a></li>
+                                    <li><a href="shop?category=Phụ kiện"><span><img src="img/vertical-menu/7.png" alt="menu-icon"></span>Phụ kiện</a></li>
+                                    <li><a href="shop?category=Máy in"><span><img src="img/vertical-menu/5.png" alt="menu-icon"></span>Máy in</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row End -->
+            </div>     
+        </div>
+        <!-- Categorie Menu & Slider Area End Here -->
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-area mt-30">
+            <div class="container">
+                <div class="breadcrumb">
+                    <ul class="d-flex align-items-center">
+                        <li><a href="/">Home</a></li>
+                        <li class="active"><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Container End -->
+        </div>
+       
+        
+        {{!-- <div class="checkout-area pb-100 pt-15 pb-sm-60">
+            <div class="container">
+                <form id="invoiceForm" method="POST" action="/invoices">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="checkbox-form mb-sm-40">
+                                <h3>Billing Details</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>Số điện thoại <span class="required">*</span></label>
+                                            <input type="text" placeholder="Số điện thoại" name="phone" id="phoneInput" onblur="searchCustomer()" required>
+                                            <span class="error" id="phoneError" style="color: red; display: none;">Vui lòng nhập số điện thoại.</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>Họ và tên <span class="required">*</span></label>
+                                            <input type="text" placeholder="Họ và tên" name="fullname" id="fullnameInput" readonly required>
+                                            <span class="error" id="fullnameError" style="color: red; display: none;">Vui lòng nhập họ và tên.</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list mb-30">
+                                            <label>Địa chỉ <span class="required">*</span></label>
+                                            <input type="text" placeholder="Địa chỉ" name="address" id="addressInput" readonly required>
+                                            <span class="error" id="addressError" style="color: red; display: none;">Vui lòng nhập địa chỉ.</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-3">
+                                        <div class="form-group">
+                                            <label for="amount_given">Số tiền nhận <span class="required">*</span></label>
+                                            <input type="number" 
+                                                class="form-control" 
+                                                placeholder="Số tiền nhận" 
+                                                name="amount_given" 
+                                                id="amount_given" 
+                                                required>
+                                            <span class="error" id="amountGivenError" style="color: red; display: none;">Số tiền nhận không đủ để thanh toán.</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="your-order">
+                                <h3>Your order</h3>
+                                <div class="your-order-table table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="product-name"> <strong>Sản phẩm</strong></th>
+                                                <th class="product-name"><strong>Số lượng</strong></th>
+                                                <th class="product-total"><strong>Tổng</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each cart}}
+                                            <tr class="cart_item">
+                                                <td class="product-name">{{this.name}} <span class="product-quantity"> </span></td>
+                                                <td>{{this.quantity}}</td>
+                                                <td class="product-total"><span class="amount">{{this.subtotal}}</span></td>
+                                            </tr>
+                                            {{/each}}
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="order-total">
+                                                <th>Tổng tiền</th>
+                                                <th></th>
+                                                <td>
+                                                    <span class="total amount">
+                                                        <script>
+                                                            document.write((function(num) {
+                                                                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                                            })({{total}}));
+                                                        </script>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div class="payment-method">
+                                    <div id="accordion">
+                                        <div class="card">
+                                            <div class="card-header" id="headingone">
+                                                <h5 class="mb-0">
+                                                    <h3>Phương thức thanh toán</h3>
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        Tiền mặt
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-button-payment" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                        <a href="/cart" class="btn btn-secondary">Quay lại</a>
+                        <button type="submit" class="btn btn-primary">Tạo hóa đơn</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+
+
+<script>
+    const total = {{total}};  // Ví dụ lấy giá trị từ Handlebars {{total}}
+
+    document.getElementById('invoiceForm').addEventListener('submit', function(e) {
+        e.preventDefault();  // Ngừng việc gửi form
+
+        // Lấy giá trị số tiền nhận và kiểm tra
+        const amountGiven = parseFloat(document.getElementById('amount_given').value);
+        const amountGivenError = document.getElementById('amountGivenError');
+
+        // Kiểm tra nếu số tiền nhận bé hơn tổng tiền
+        if (amountGiven < total) {
+            amountGivenError.style.display = 'block';  // Hiển thị lỗi
+        } else {
+            amountGivenError.style.display = 'none';  // Ẩn lỗi
+            this.submit();  // Gửi form nếu hợp lệ
+        }
+    });
+    // Kiểm tra và hiển thị thông báo lỗi nếu thiếu thông tin
+    document.getElementById('invoiceForm').addEventListener('submit', function(e) {
+        let isValid = true;
+
+        // Reset thông báo lỗi
+        document.getElementById('phoneError').style.display = 'none';
+        document.getElementById('fullnameError').style.display = 'none';
+        document.getElementById('addressError').style.display = 'none';
+        document.getElementById('amountGivenError').style.display = 'none';
+
+        // Kiểm tra các trường bắt buộc
+        if (!document.getElementById('phoneInput').value) {
+            document.getElementById('phoneError').style.display = 'block';
+            isValid = false;
+        }
+        if (!document.getElementById('fullnameInput').value) {
+            document.getElementById('fullnameError').style.display = 'block';
+            isValid = false;
+        }
+        if (!document.getElementById('addressInput').value) {
+            document.getElementById('addressError').style.display = 'block';
+            isValid = false;
+        }
+        if (!document.getElementById('amount_given').value) {
+            document.getElementById('amountGivenError').style.display = 'block';
+            isValid = false;
+        }
+
+        if (!isValid) {
+            e.preventDefault(); // Ngừng gửi form nếu có lỗi
+        }
+    });
+    async function searchCustomer() {
+        const phone = document.getElementById('phoneInput').value;
+
+        if (phone) {
+            try {
+                const response = await fetch(`/customer/search?phone=${phone}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.customer) {
+                        document.getElementById('fullnameInput').value = data.customer.fullname;
+                        document.getElementById('addressInput').value = data.customer.address;
+                    } else {
+                        document.getElementById('fullnameInput').value = '';
+                        document.getElementById('addressInput').value = '';
+                        alert(data.message);
+                    }
+                } else {
+                    alert('Lỗi tìm kiếm khách hàng. Vui lòng thử lại.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Có lỗi xảy ra. Vui lòng thử lại sau.');
+            }
+        }
+    }
+</script> --}}
+
+
+<!-- Modal Thêm Khách Hàng -->
+<div class="checkout-area pb-100 pt-15 pb-sm-60">
+    <div class="container">
+        <form id="invoiceForm" method="POST" action="/invoices">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="checkbox-form mb-sm-40">
+                        <h3>Billing Details</h3>
+                        <div class="row">
+                            {{#if error}}
+                            <div class="alert alert-danger" role="alert">
+                                {{message}}
+                            </div>
+                            {{/if}}
+
+                            <!-- Số điện thoại -->
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Số điện thoại <span class="required">*</span></label>
+                                    <input type="text" placeholder="Số điện thoại" name="phone" id="phoneInput" onblur="searchCustomer()" required>
+                                    <span class="error" id="phoneError" style="color: red; display: none;">Vui lòng nhập số điện thoại.</span>
+                                </div>
+                            </div>
+                            <!-- Họ và tên -->
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Họ và tên <span class="required">*</span></label>
+                                    <input type="text" placeholder="Họ và tên" name="fullname" id="fullnameInput" readonly required>
+                                    <span class="error" id="fullnameError" style="color: red; display: none;">Vui lòng nhập họ và tên.</span>
+                                </div>
+                            </div>
+                            <!-- Địa chỉ -->
+                            <div class="col-md-12">
+                                <div class="checkout-form-list mb-30">
+                                    <label>Địa chỉ <span class="required">*</span></label>
+                                    <input type="text" placeholder="Địa chỉ" name="address" id="addressInput" readonly required>
+                                    <span class="error" id="addressError" style="color: red; display: none;">Vui lòng nhập địa chỉ.</span>
+                                </div>
+                            </div>
+                            <!-- Số tiền nhận -->
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label for="amount_given">Số tiền nhận <span class="required">*</span></label>
+                                    <input type="number" class="form-control" placeholder="Số tiền nhận" name="amount_given" id="amount_given" required>
+                                    <span class="error" id="amountGivenError" style="color: red; display: none;">Số tiền nhận không đủ để thanh toán.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Thêm Khách Hàng -->
+                    <div id="addCustomerModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeCustomerModal()">&times;</span>
+                            <h3>Thông tin khách hàng mới</h3>
+                            <label for="newPhone">Số điện thoại:</label>
+                            <input type="text" id="newPhone" placeholder="Số điện thoại">
+                            <label for="newFullname">Họ và tên:</label>
+                            <input type="text" id="newFullname" placeholder="Họ và tên">
+                            <label for="newAddress">Địa chỉ:</label>
+                            <input type="text" id="newAddress" placeholder="Địa chỉ">
+                            <button type="button" onclick="addNewCustomer()">Thêm khách hàng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Giỏ hàng -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="your-order">
+                        <h3>Your order</h3>
+                        <div class="your-order-table table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="product-name"> <strong>Sản phẩm</strong></th>
+                                        <th class="product-name"><strong>Số lượng</strong></th>
+                                        <th class="product-total"><strong>Tổng</strong></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each cart}}
+                                    <tr class="cart_item">
+                                        <td class="product-name">{{this.name}}</td>
+                                        <td>{{this.quantity}}</td>
+                                        <td class="product-total"><span class="amount">{{this.subtotal}}</span></td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                                <tfoot>
+                                    <tr class="order-total">
+                                        <th>Tổng tiền</th>
+                                        <th></th>
+                                        <td>
+                                            <span class="total amount">
+                                                <script>
+                                                    document.write((function(num) {
+                                                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+                                                    })({{total}}));
+                                                </script>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nút hành động -->
+            <div class="order-button-payment" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="/cart" class="btn btn-secondary">Quay lại</a>
+                <button type="submit" class="btn btn-primary">Tạo hóa đơn</button>
+                <button type="button" class="btn btn-warning" id="addCustomerBtn" onclick="openCustomerModal()">Thêm khách hàng mới</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script>
+    // Hiển thị Modal khi thêm khách hàng mới
+function openCustomerModal() {
+    document.getElementById('addCustomerModal').style.display = 'block';
+}
+
+// Đóng Modal
+function closeCustomerModal() {
+    document.getElementById('addCustomerModal').style.display = 'none';
+}
+
+// Thêm khách hàng mới
+async function addNewCustomer() {
+    const phone = document.getElementById('newPhone').value;
+    const fullname = document.getElementById('newFullname').value;
+    const address = document.getElementById('newAddress').value;
+
+    if (!phone || !fullname || !address) {
+        alert('Vui lòng điền đầy đủ thông tin khách hàng.');
+        return;
+    }
+
+    try {
+        const response = await fetch('/customer/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ phone, fullname, address })
+        });
+
+        if (response.ok) {
+            const newCustomer = await response.json();
+            alert('Thêm khách hàng thành công.');
+            // Cập nhật thông tin khách hàng trong form
+            document.getElementById('fullnameInput').value = newCustomer.fullname;
+            document.getElementById('addressInput').value = newCustomer.address;
+            closeCustomerModal();  // Đóng modal sau khi thêm thành công
+        } else {
+            alert('Có lỗi xảy ra khi thêm khách hàng. Vui lòng thử lại.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Có lỗi xảy ra. Vui lòng thử lại sau.');
+    }
+}
+
+// Tìm kiếm khách hàng
+async function searchCustomer() {
+    const phone = document.getElementById('phoneInput').value;
+
+    if (phone) {
+        try {
+            const response = await fetch(`/customer/search?phone=${phone}`);
+            if (response.ok) {
+                const data = await response.json();
+                if (data.customer) {
+                    // Nếu tìm thấy khách hàng, hiển thị thông tin
+                    document.getElementById('fullnameInput').value = data.customer.fullname;
+                    document.getElementById('addressInput').value = data.customer.address;
+                } else {
+                    // Nếu không tìm thấy khách hàng, mở modal thêm khách hàng
+                    openCustomerModal();
+                }
+            } else {
+                alert('Lỗi tìm kiếm khách hàng. Vui lòng thử lại.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Có lỗi xảy ra. Vui lòng thử lại sau.');
+        }
+    }
+}
+
+</script>
+
+       
+    </div>
+    <!-- Main Wrapper End Here -->
+
+    <script src="/js/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Countdown js -->
+    <script src="/js/jquery.countdown.min.js"></script>
+    <!-- Mobile menu js -->
+    <script src="/js/jquery.meanmenu.min.js"></script>
+    <!-- ScrollUp js -->
+    <script src="/js/jquery.scrollUp.js"></script>
+    <!-- Nivo slider js -->
+    <script src="/js/jquery.nivo.slider.js"></script>
+    <!-- Fancybox js -->
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <!-- Jquery nice select js -->
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <!-- Jquery ui price slider js -->
+    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Owl carousel -->
+    <script src="/js/owl.carousel.min.js"></script>
+    <!-- Bootstrap popper js -->
+    <script src="/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Plugin js -->
+    <script src="/js/plugins.js"></script>
+    <!-- Main activation js -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
